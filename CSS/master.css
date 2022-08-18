@@ -1,0 +1,285 @@
+/* Global Rules */
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+:root {
+    --main-color: #0075ff;
+    --main-color-alt: #607d8b;
+    --links-color: #1c91ac;
+    --links-color-hover: #0f5c76;
+    --section-background-color: #ececec;
+}
+html {
+    scroll-behavior: smooth;
+}
+body{
+    font-family: 'Cairo', sans-serif; 
+}
+a {
+    text-decoration: none;
+}
+.contaner {
+    padding:0 15px ;  
+    margin: 40px auto 0;  
+}
+@media (min-width: 768px){    
+    .contaner {
+        width: 750px;
+    }
+}
+@media (min-width: 992px){    
+    .contaner {
+        width: 970px;
+    }
+}
+@media (min-width: 1200px){    
+    .contaner {
+        width: 1170px;
+    }
+}
+
+
+
+
+
+
+/* Start Page */
+.page {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+.page::before {
+    content: "";
+    position: fixed;
+    width: 300%;
+    height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) skew(0, -10deg);
+    background-color: var(--main-color);
+    border-radius: 50%;
+    z-index: -1;
+    animation: wave 8s ease-in-out infinite alternate;
+}
+@keyframes wave {
+    0%{
+        transform: translateX(-50%) skew(0, -10deg);
+    }
+    100% {
+        transform: translateX(-30%) skew(10deg, 0);
+    }
+}
+
+.page .card {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 -11px 10px 0 #ddd;
+    border-radius: 4px;
+    width: 400px;
+    text-align: center;
+}
+@media (max-width: 420px){    
+    .page .card {
+        width: 100%;
+        padding: 20px 5px;
+    }
+}
+
+
+.card .header-login {
+    display: flex;
+    font-size: 30px;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 30px;
+}
+.card .header-login h3 {
+    width: fit-content;
+    padding: 5px 10px;
+    box-shadow: 0px 3px 7px 0 #6f6f6f;
+    border-radius: 18px;
+    user-select: none;
+}
+.card .header-login h3 .tittel1 {
+    color: var(--main-color);
+    font-size: 40px;
+}
+.card .header-login h3 .tittel2 {
+    font-weight: 700;
+    font-size: 30px;
+    color:var(--main-color-alt) ;
+}
+
+
+
+
+
+.card .body-login form .sign-in h5{
+    font-weight: 700;
+    color: var(--main-color-alt);
+    font-size: 20px;
+    text-align: center;
+    padding-bottom: 19px;
+}
+
+.card .body-login form .input-password,
+.card .body-login form .input-user {
+    display: flex;
+    margin-bottom: 8px;
+}
+.card .body-login form .input-password label,
+.card .body-login form .input-user label {
+    flex-basis: 9%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid var(--main-color-alt);
+    background-color: var(--main-color-alt);
+    color: white;
+    margin-right: -1px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+@media (max-width: 420px){    
+    .card .body-login form .input-password label,
+    .card .body-login form .input-user label {
+        flex-basis: 10%;
+    }
+}
+.card .body-login form .input-password label i {
+    font-size: 14px;
+}
+.card .body-login form .input-user label i {
+    font-size: 20px;
+}
+.card .body-login form .input-password input,
+.card .body-login form .input-user input {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid var(--main-color-alt);
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    caret-color: var(--main-color);
+}
+.card .body-login form .input-password input::placeholder,
+.card .body-login form .input-user input::placeholder {
+    font-size: 14px;
+}
+.card .body-login form .input-password input:focus ,
+.card .body-login form .input-user input:focus {
+    outline:none;
+}
+
+
+
+.card .body-login form .ch-box {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+.card .body-login form .ch-box .remember {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card .body-login form .ch-box .remember input {
+    margin-right: 3px;
+}
+.card .body-login form .ch-box .remember label {
+    line-height: 1px;
+    user-select: none;
+}
+.card .body-login form .ch-box a {
+    color: var(--links-color);
+    text-decoration: none;
+}
+.card .body-login form .ch-box a:hover {
+    color: var(--links-color-hover);
+}
+
+.card .body-login form .submit {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 10px;
+    font-size: 15px;
+}
+.card .body-login form .submit button{
+    padding: 10px 20px;
+    border: none;
+    color: white;
+    background-color: rgb(0 117 255 / 90%);
+    border-radius: 5px;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+.card .body-login form .submit button:hover {
+    background-color: var(--main-color);
+}
+
+
+.card .footer-login hr {
+    border: 1px solid #495057;
+}
+.card .footer-login .footer-login-1 {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 15px 25px;
+}
+@media (max-width: 420px){    
+    .card .footer-login .footer-login-1 {
+        padding: 15px 0px;
+    }
+}
+.card .footer-login .footer-login-1 a {
+    color: var(--links-color);
+    text-decoration:underline;
+}
+.card .footer-login .footer-login-1 a:hover {
+    color: var(--links-color-hover);
+}
+
+
+
+.card .footer-login .footer-login-2{
+    display: flex;
+    flex-direction: column;
+    margin-top: 13px;
+}
+.card .footer-login .footer-login-2 .one {
+    display: flex;
+    justify-content: space-around;
+    padding: 1px 30px;
+}
+@media (max-width: 420px){    
+    .card .footer-login .footer-login-2 .one {
+        padding: 3px 0px;
+    }
+}
+.card .footer-login .footer-login-2 .two {
+    display: flex;
+    justify-content: space-around;
+    padding: 1px 56px;
+}
+@media (max-width: 420px){    
+    .card .footer-login .footer-login-2 .two {
+        padding: 3px 10px;
+    }
+}
+.card .footer-login .footer-login-2 a {
+    color: var(--links-color);
+    text-decoration:underline;
+}
+.card .footer-login .footer-login-2 a:hover {
+    color: var(--links-color-hover);
+}
